@@ -85,6 +85,7 @@ const Home = () => {
     }
   }
 
+  // Serach notes
   const onSearchNote = async (query) => {
     try {
       const res = await axios.get("http://localhost:3000/api/note/search", {
@@ -110,6 +111,7 @@ const Home = () => {
     getAllNotes()
   }
 
+  // pined notes
   const updateIsPinned = async (noteData) => {
     const noteId = noteData._id
 
