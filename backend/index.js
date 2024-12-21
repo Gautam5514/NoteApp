@@ -33,6 +33,11 @@ import noteRouter from "./routes/note.route.js"
 app.use("/api/auth", authRouter)
 app.use("/api/note", noteRouter)
 
+app.get("/", (req, res) => {
+  res.send("Hello from express")
+})
+  
+
 // error handling
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500
