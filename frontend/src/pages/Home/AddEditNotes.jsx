@@ -17,7 +17,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
 
     try {
       const res = await axios.post(
-        "https://note-app-peb5.vercel.app/api/note/edit/" + noteId,
+        "https://note-app-peb5-dmhrciya1-gautam5514s-projects.vercel.app/api/note/edit/" + noteId,
         { title, content, tags },
         { withCredentials: true }
       )
@@ -45,7 +45,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const addNewNote = async () => {
     try {
       const res = await axios.post(
-        "https://note-app-peb5.vercel.app/api/note/add",
+        "https://note-app-peb5-dmhrciya1-gautam5514s-projects.vercel.app/api/note/add",
         { title, content, tags },
         { withCredentials: true }
       )
