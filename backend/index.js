@@ -20,7 +20,13 @@ const app = express()
 // to make input as json
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(
+  cors({
+    origin: "*", // Allow all origins
+    credentials: false, // No credentials since this allows all origins
+  })
+);
+
 
 // { origin: ["http://localhost:5173"], credentials: true }
 app.listen(3000, () => {
