@@ -17,7 +17,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
 
     try {
       const res = await axios.post(
-        "note-app-backend-lilac.vercel.app/api/note/edit/" + noteId,
+        "http://localhost:3000/api/note/edit/" + noteId,
         { title, content, tags },
         { withCredentials: true }
       )
@@ -45,7 +45,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const addNewNote = async () => {
     try {
       const res = await axios.post(
-        "note-app-backend-lilac.vercel.app/api/note/add",
+        "http://localhost:3000/api/note/add",
         { title, content, tags },
         { withCredentials: true }
       )
