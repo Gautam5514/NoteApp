@@ -21,10 +21,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(
-  cors({
-    origin: "*", // Allow all origins
-    credentials: false, // No credentials since this allows all origins
-  })
+  cors({ origin: ["http://localhost:5173"], credentials: true })
 );
 
 
@@ -40,13 +37,13 @@ import noteRouter from "./routes/note.route.js"
 app.use("/api/auth", authRouter)
 app.use("/api/note", noteRouter)
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Hello from express")
 })
   
 
 // error handling
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   const statusCode = err.statusCode || 500
   const message = err.message || "Internal Serer Error"
 

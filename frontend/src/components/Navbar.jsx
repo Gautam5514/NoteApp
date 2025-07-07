@@ -32,7 +32,7 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
     try {
       dispatch(signoutStart())
 
-      const res = await axios.get("https://note-app-peb5-dmhrciya1-gautam5514s-projects.vercel.app/api/auth/signout", {
+      const res = await axios.get("http://localhost:3000/api/auth/signout", {
         withCredentials: true,
       })
 
